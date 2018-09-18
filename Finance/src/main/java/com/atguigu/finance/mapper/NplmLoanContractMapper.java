@@ -7,6 +7,7 @@ import java.util.List;
 
 public interface NplmLoanContractMapper extends Mapper<NplmLoanContract> {
 
-    List<NplmLoanContract> findAllContract();
+    List<NplmLoanContract> findAllContract(NplmLoanContract nplmLoanContract);
 
+    /*List<NplmLoanContract> findAllContract();*/
 }

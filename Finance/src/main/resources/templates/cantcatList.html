@@ -41,6 +41,10 @@ td {
 </style>
 <script>
 
+    function searchInfo(){
+        $("#searchForm").submit();
+    }
+
 $(function(){
 	var fromDate;
 	
@@ -136,7 +140,7 @@ $(document).ready(function(){
 </script>
 
 <div>&nbsp;</div>
-    		<form id="searchForm" method="post">
+    		<form id="searchForm" th:action="cantcatList" method="post">
 		    	<table style="height: auto; width: 100%;" >
 		    		<tbody>
 					<tr>
@@ -146,7 +150,7 @@ $(document).ready(function(){
 		    				合同编号：
 		    			</td>
 		    			<td width="20%">
-		    				<input  id="clientName" name="clientName" style="width:188px;" value="">
+		    				<input  id="" name="" style="width:188px;" value="">
 		    				<input type="hidden" id="pPage" name="pageSize" value=""> 
 		    				<input type="hidden" id="pSize" name="pageSize" value=""> 
 		    				<input type="hidden" id="sysId" name="sysId" value="11">
@@ -156,7 +160,7 @@ $(document).ready(function(){
 		    				客户姓名：
 		    			</td>
 		    			<td width="20%">
-		    				<input  id="clientName" name="clientName" style="width:188px;" value="">
+		    				<input  id="clientName" name="nplmBorrowerInfo.clientName" style="width:188px;" value="">
 		    				<input type="hidden" id="pPage" name="pageSize" value=""> 
 		    				<input type="hidden" id="pSize" name="pageSize" value=""> 
 		    				<input type="hidden" id="sysId" name="sysId" value="11">
@@ -166,7 +170,7 @@ $(document).ready(function(){
 		    				证件号：
 		    			</td>
 		    			<td width="20%">
-		    				<input  id="clientName" name="clientName" style="width:188px;" value="">
+		    				<input  id="" name="nplmBorrowerInfo.identityNum" style="width:188px;" value="">
 		    				<input type="hidden" id="pPage" name="pageSize" value=""> 
 		    				<input type="hidden" id="pSize" name="pageSize" value=""> 
 		    				<input type="hidden" id="sysId" name="sysId" value="11">
@@ -178,7 +182,7 @@ $(document).ready(function(){
 		
 						<td width="8%" class="td_1">贷款品种： </td>
 							<td width="26%">
-								<input type="hidden" id="selectedOffice" name="selectedOffice" value="172,58,11,15,9,104,195,165,193,53,33,1,54,260,11011192,47,113,6,273,22,57,134,129,271,127,100,197,85,28,301,62,175,155,101,223,250,1,222,200,249,204,135,163,159,272,123,42,95,23,144,20,75,32,207,224,142,120,3,11011279,11009482,137,203,270,25,6,151,181,116,247,72,262,184,110,66,186,138,167,130,221,12,269,189,274,21,152,251,88,114,76,201,202,31,178,26,98,69,241,230,106,162,265,43,107,68,65,121,206,99,73,141,191,63,17,196,78,133,157,148,231,239,299,176,160,131,70,161,154,51,111,168,214,71,11011325,11110829,96,248,41,118,109,153,124,194,303,102,268,11011192,94,64,29,60,36,97,6,240,147,24,145,90,87,238,132,94,74,192,3,302,11011279,112,188,243,185,39,55,16,187,267,23,103,177,190,139,128,275,115,237,261,146,136,44,217,166,182,173,149,228,122,150,59,10,263,67,93,183,44,46,14,125,170,40,205,301,50,23,300,212,174,126,77,276,229,79,164,156,13,158,35,89,86,172"> 
+								<input type="hidden" id="" name="" value="172,58,11,15,9,104,195,165,193,53,33,1,54,260,11011192,47,113,6,273,22,57,134,129,271,127,100,197,85,28,301,62,175,155,101,223,250,1,222,200,249,204,135,163,159,272,123,42,95,23,144,20,75,32,207,224,142,120,3,11011279,11009482,137,203,270,25,6,151,181,116,247,72,262,184,110,66,186,138,167,130,221,12,269,189,274,21,152,251,88,114,76,201,202,31,178,26,98,69,241,230,106,162,265,43,107,68,65,121,206,99,73,141,191,63,17,196,78,133,157,148,231,239,299,176,160,131,70,161,154,51,111,168,214,71,11011325,11110829,96,248,41,118,109,153,124,194,303,102,268,11011192,94,64,29,60,36,97,6,240,147,24,145,90,87,238,132,94,74,192,3,302,11011279,112,188,243,185,39,55,16,187,267,23,103,177,190,139,128,275,115,237,261,146,136,44,217,166,182,173,149,228,122,150,59,10,263,67,93,183,44,46,14,125,170,40,205,301,50,23,300,212,174,126,77,276,229,79,164,156,13,158,35,89,86,172">
 								<span class="searchbox" style="width:189px;"> 
 								<input class="searchbox-text" type="text" id="selectedOfficeName" name="selectedOfficeName" style="width:169px;" value="宜信公司，新薪贷......" readonly="readonly" data-options="required:'true'">
 								<span class="searchbox-button" onClick="deptree('open');"></span>
@@ -187,7 +191,7 @@ $(document).ready(function(){
 								
 						<td width="10%" class="td_1">城市地区：</td>
 						<td width="20%">
-		    				<input  id="clientName" name="clientName" style="width:188px;" value="">
+		    				<input  id="" name="" style="width:188px;" value="">
 		    				<input type="hidden" id="pPage" name="pageSize" value=""> 
 		    				<input type="hidden" id="pSize" name="pageSize" value=""> 
 		    				<input type="hidden" id="sysId" name="sysId" value="11">
@@ -196,7 +200,7 @@ $(document).ready(function(){
 					
 					<td width="10%" class="td_1">营业部：</td>
 						<td width="20%">
-		    				<input  id="clientName" name="clientName" style="width:188px;" value="">
+		    				<input  id=" " name="" style="width:188px;" value="">
 		    				<input type="hidden" id="pPage" name="pageSize" value=""> 
 		    				<input type="hidden" id="pSize" name="pageSize" value=""> 
 		    				<input type="hidden" id="sysId" name="sysId" value="11">
@@ -406,17 +410,17 @@ $(document).ready(function(){
 		
     </thead>  
 	<tbody>   
-        <tr th:each="nplmContractAttribute:${nplmContractAttributes}">
+        <tr th:each="loanContract:${loanContracts}">
 			<td>
 				<a href="../common/查看还款情况页面.htm" onClick="window.open(this.href,    '_self',    'scrollbars=yes');return  false">查看还款情况</a>
 				<a href="../common/修改还款情况页面.htm" onClick="window.open(this.href,    '_self',    'scrollbars=yes');return  false">修改还款情况</a>
 				</td>
-			<td th:text="${nplmContractAttribute.nplmLoanContract.loanContractNum}">565544</td>
+			<td th:text="${loanContract.loanContractNum}">565544</td>
 			<td>还款中</td>
 			
-			<td th:text="${nplmContractAttribute.nplmLoanContract.nplmBorrowerInfo.clientName}">谢青</td>
-			<td>居民第二代身份证</td>
-			<td>2222 2222 2222 2222</td>
+			<td th:text="${loanContract.nplmBorrowerInfo.clientName}">谢青</td>
+			<td th:text="${loanContract.repayAcctIdenType}">居民第二代身份证</td>
+			<td th:text="${loanContract.repayAcctIdenNum}">2222 2222 2222 2222</td>
 			
 			<td>房贷一抵反担保</td>
 			<td>信托</td>

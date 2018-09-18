@@ -1,10 +1,12 @@
 package com.atguigu.finance.bean;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
-public class NplmLoanContract {
-
+public class NplmLoanContract implements Serializable {
+    @Transient
+    private NplmBorrowerInfo nplmBorrowerInfo=new NplmBorrowerInfo();
     public NplmBorrowerInfo getNplmBorrowerInfo() {
         return nplmBorrowerInfo;
     }
@@ -19,8 +21,18 @@ public class NplmLoanContract {
      *
      * @mbggenerated Mon Sep 17 13:23:03 CST 2018
      */
+
+
+    public NplmContractAttribute getNplmContractAttribute() {
+        return nplmContractAttribute;
+    }
+
+    public void setNplmContractAttribute(NplmContractAttribute nplmContractAttribute) {
+        this.nplmContractAttribute = nplmContractAttribute;
+    }
+
     @Transient
-    private NplmBorrowerInfo nplmBorrowerInfo;
+    private NplmContractAttribute nplmContractAttribute= new NplmContractAttribute();
 
     @Id
     @Column

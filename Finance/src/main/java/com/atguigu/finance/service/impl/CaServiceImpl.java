@@ -1,7 +1,6 @@
 package com.atguigu.finance.service.impl;
 
-import com.atguigu.finance.bean.NplmBorrowerInfo;
-import com.atguigu.finance.bean.NplmContractAttribute;
+
 import com.atguigu.finance.bean.NplmLoanContract;
 import com.atguigu.finance.mapper.NplmBorrowerInfoMapper;
 import com.atguigu.finance.mapper.NplmContractAttributeMapper;
@@ -26,25 +25,11 @@ public class CaServiceImpl implements CaService{
 
 
     @Override
-    public List<NplmContractAttribute> contractAttributeList() {
-        List<NplmContractAttribute> nplmContractAttributes = nplmContractAttributeMapper.selectAll();
-
-        return nplmContractAttributes;
+    public List<NplmLoanContract> findAll(NplmLoanContract nplmLoanContract) {
+        return nplmLoanContractMapper.findAllContract(nplmLoanContract);
     }
-
-    @Override
-    public NplmBorrowerInfo selectBorrowerInfoById(String id) {
-        NplmBorrowerInfo borrowerInfo1 = nplmBorrowerInfoMapper.selectByPrimaryKey(id);
-        return borrowerInfo1;
-    }
-
-    @Override
-    public NplmLoanContract selecteLoanContractById(String id) {
-
-        NplmLoanContract loanContract = nplmLoanContractMapper.selectByPrimaryKey(id);
-
-        return loanContract;
-    }
-
-
+    /*@Override
+    public List<NplmLoanContract> findAll() {
+        return nplmLoanContractMapper.findAllContract();
+    }*/
 }

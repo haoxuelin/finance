@@ -4,12 +4,30 @@
     <select  id ="findAllContract" resultMap="contractMap">
         SELECT lc.*,ca.*,bi.*
         FROM nplm_loan_contract lc,nplm_contract_attribute ca,nplm_borrower_info bi
-        WHERE lc.LOAN_CONTRACT_NUM=ca.LOAN_CONTRACT_NUM
-        AND lc.ECIF_ID=bi.ECIF_ID
+        /*where lc.LOAN_CONTRACT_NUM=ca.LOAN_CONTRACT_NUM AND lc.ECIF_ID=bi.ECIF_ID*/
+        <where>
+            lc.LOAN_CONTRACT_NUM=ca.LOAN_CONTRACT_NUM AND lc.ECIF_ID=bi.ECIF_ID
+
+            <if test="nplmBorrowerInfo.clientName!=null">
+                and bi.CLIENT_NAME like '%${nplmBorrowerInfo.clientName}%'
+            </if>
+
+            <if test="nplmBorrowerInfo.identityNum!=null">
+                and bi.IDENTITY_NUM like '%${nplmBorrowerInfo.identityNum}%'
+            </if>
+
+
+        </where>
+        /*WHERE lc.LOAN_CONTRACT_NUM=ca.LOAN_CONTRACT_NUM AND lc.ECIF_ID=bi.ECIF_ID*/
     </select>
     <resultMap id="contractMap" type="com.atguigu.finance.bean.NplmLoanContract" autoMapping="true">
         <result property="id" column="id" ></result>
 
+        <association property="nplmContractAttribute" javaType="com.atguigu.finance.bean.NplmContractAttribute" autoMapping="true">
+        </association>
+
+        <association property="nplmBorrowerInfo" javaType="com.atguigu.finance.bean.NplmBorrowerInfo" autoMapping="true">
+        </association>
 
     </resultMap>
 </mapper>
