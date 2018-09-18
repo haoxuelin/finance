@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.finance.mapper.NplmLoanContractMapper">
+    <select  id ="findAllContract" resultMap="contractMap">
+        SELECT lc.*,ca.*,bi.*
+        FROM nplm_loan_contract lc,nplm_contract_attribute ca,nplm_borrower_info bi
+        WHERE lc.LOAN_CONTRACT_NUM=ca.LOAN_CONTRACT_NUM
+        AND lc.ECIF_ID=bi.ECIF_ID
+    </select>
+    <resultMap id="contractMap" type="com.atguigu.finance.bean.NplmLoanContract" autoMapping="true">
+        <result property="id" column="id" ></result>
+
+
+    </resultMap>
+</mapper>
